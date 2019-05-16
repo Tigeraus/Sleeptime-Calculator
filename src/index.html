@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <title>入睡时间计算器</title>
+</head>
+
+<body>
+
+    <div class="container ">
+        <!-- is-fluid -->
+        <!-- <div>
+            <img class="image is-square" src="img/webpack-logo.png" alt="Webpack">
+        </div> -->
+
+        <figure class="image is-128x128 has-image-centered">
+            <img src="img/moon.png">
+        </figure>
+
+
+        <div id="app">
+            <h1 class="title is-1 has-text-centered">入睡时间计算器</h1>
+            <h4 class="title is-5 has-text-centered">{{message}}</h4>
+            <section class="columns">
+                <div class="column">
+
+                    <b-field :label="xianzaishi">
+                        <b-clockpicker v-model="time" inline rounded placeholder="Click to select..." icon="clock"
+                            :hour-format="format">
+                        </b-clockpicker>
+                    </b-field>
+                </div>
+                <div class="column">
+                    <line-chart style="height:300px" v-bind:atime="time" :sleep_start_time="sleep_time"
+                        :wakeup_time="wakeup_time">
+                    </line-chart>
+                    <p>根据睡眠周期计算，我们建议您在<strong>{{sleep_start}}</strong>左右, 也就是 <strong>{{minutes_remain}}</strong>
+                        分钟以后入睡以获得
+                        {{period_number}}
+                        个周期的完整睡眠，达到最佳的睡眠效果。</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Made by <a href="https://huzicheng.com">Huzi</a>.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- <button id="randomInt">A random Integer</button>
+<button id="randomRange">A random Integer in a Range</button>
+<p id="outputParagraph">Youasda  can't see this all the time</p> -->
+
+</body>
+
+</html>
