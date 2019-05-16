@@ -42,7 +42,7 @@ export function getSleeptime(possible_wakeup_time) {
 }
 
 export function getMoment(hour) {
-    if (hour >= 21) {
+    if (hour >= 23) {
         return "深夜"
     } else if (hour > 0 && hour < 6) {
         return "凌晨"
